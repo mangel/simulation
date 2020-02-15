@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+from sympy import *
 
 class Orbit:
 	def __init__(self, seed):
@@ -7,13 +8,16 @@ class Orbit:
 		self.previous = None
 		self.X = []
 		self.Y = []
+		self.x = symbols('x')
+		self.symbfn_1 = 2*self.x
+		self.symbfn_2 = 2*(self.x)-1
 
-	def f(self, x):
+	def f(self, x_in):
 		result = None
-		if (0 <= x and x < 0.5):
-			result = 2*x
-		elif (0.5 <= x and x < 1):
-			result = 2*x - 1
+		if (0 <= x_in and x_in < 0.5):
+			result = self.symbfn_1.subs(self.x, x_in)
+		elif (0.5 <= x_in and x_in < 1):
+			result = self.symbfn_2.subs(self.x, x_in)
 		return result
 	
 	def step(self):
@@ -28,7 +32,15 @@ class Orbit:
 		return self.n, result
 			
 MAX = 100
-seeds = [0, 0.001, 0.25, 0.5, 0.999]
+seed_1, seed_2, seed_3, seed_4, seed_5, seed_6 = symbols('seed_1 seed_2 seed_3 seed_4 seed_5 seed_6')
+seed_1 = 0
+seed_2 = Rational(1,1000)
+seed_3 = Rational(1,4)
+seed_4 = Rational(1,2)
+seed_5 = Rational(999,1000)
+seed_6 = Rational(1,9)
+
+seeds = [seed_1, seed_2, seed_3, seed_4, seed_5]
 total_seeds = len(seeds)
 Os=[]
 

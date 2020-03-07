@@ -29,6 +29,24 @@ class ResultsCounter:
             results.append([po, arr.count(po)])
         return results
 
+def converter(i):
+    result = 'T'
+    if i == True:
+        result = 'H'
+    return result
+
+def heads_or_tails(number):
+    result = 'T'
+    if number <= 0.5:
+        result = 'H'
+    return result
+
+def array_key_to_hash(arr):
+    result = ''
+    for i in arr:
+        result = result + converter(i)
+    return result
+
 x_0 = 5003
 a = 9973
 c = 9929
@@ -54,6 +72,14 @@ tossed_coins = list(numbers <= 0.5)
 d1_hist = ResultsCounter.get_results(tossed_coins, POSSIBLE_RESULTS)
 #print(d1_hist)
 
+# Transform
+d1_transformed = dict()
+
+for i in d1_hist:
+    new_key = converter(i[0])
+    d1_transformed[new_key] = i[1]
+print(d1_transformed)
+
 # group in pairs
 pairs = []
 PAIRS_POSSIBLE_RESULTS = [[x,y] for x in POSSIBLE_RESULTS for y in POSSIBLE_RESULTS]
@@ -69,6 +95,13 @@ for n in range(iterations):
 d2_hist = ResultsCounter.get_results(pairs, PAIRS_POSSIBLE_RESULTS)
 #print(d2_hist)
 
+# transform
+d2_transformed = dict()
+for i in d2_hist:
+    new_key = array_key_to_hash(i[0])
+    d2_transformed[new_key] = i[1]
+print(d2_transformed)
+
 # group in triplets
 triplets = []
 TRIPLETS_POSSIBLE_RESULTS = [[x,y, z] for x in POSSIBLE_RESULTS for y in POSSIBLE_RESULTS for z in POSSIBLE_RESULTS]
@@ -83,6 +116,13 @@ for n in range(iterations):
 #print(TRIPLETS_POSSIBLE_RESULTS)
 d3_hist = ResultsCounter.get_results(triplets, TRIPLETS_POSSIBLE_RESULTS)
 #print(d3_hist)
+
+# transform
+d3_transformed = dict()
+for i in d3_hist:
+    new_key = array_key_to_hash(i[0])
+    d3_transformed[new_key] = i[1]
+print(d3_transformed)
 
 #Streak
 item_looking_for = True # which is heads
@@ -114,5 +154,6 @@ for k in keys:
     sorted_streaks_hist[k] = streaks_hist[k]
     
 #print(tossed_coins)            
-print(streaks_hist)
-print(sorted_streaks_hist)
+#print(streaks_hist)
+print("Streaks for {}: {}".format(converter(item_looking_for), sorted_streaks_hist))
+

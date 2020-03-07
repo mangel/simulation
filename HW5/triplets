@@ -1,0 +1,9 @@
+Combination,Occurrences,Probability,Analytical Difference
+HHH,447,0.134,+0.009
+HHT,463,0.138,+0.013
+HTH,410,0.123,-0.002
+HTT,416,0.124,-0.001
+THH,382,0.114,-0.011
+THT,481,0.144,+0.019
+TTH,350,0.105,-0.02
+TTT,384,0.115,-0.01

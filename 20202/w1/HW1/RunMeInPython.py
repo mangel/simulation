@@ -1,7 +1,7 @@
 from datetime import datetime
 import math
 
-l_nm2 = 2
+l_nm2 = 3
 l_nm1 = 1
 
 l_n = 0

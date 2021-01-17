@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, mexico]{babel}
+
+\usepackage{setspace}
+\usepackage{dirtytalk}
+
+\title{Revisión de: Selección de portafolios para la valuación de
+	acciones en el mercado de valores colombiano.}
+\begin{document}
+	\maketitle
+\doublespacing
+\paragraph{Resúmen.} Con el propósito de maximizar la rentabilidad de un portafolio de inversión en la BVC, el autor describe el uso de un algoritmo genético para predecir el comportamiento de tres opciones de inversión, acotadas a un objetivo de inversión y un tiempo estimado, se comparan los resultados de las predicciones contra datos reales de la BVC y visualmente se puede evidenciar cierta cercanía a los valores sintéticos. Se concluye que el algoritmo puede ser adaptado a otros subyacentes.
+\paragraph{Revisión.} En general, el artículo maneja un lenguaje claro y entendible, hay un hilo conductor que une los temas a lo largo del escrito y la aplicación se encuentra estrechamente relacionada con los temas vistos en clase, sin embargo el artículo requiere cambios, unos menores, otros sustanciales. 
+\paragraph{}La sección de alcance y delimitaciones, se puede unir con la de los objetivos o convertirse en la sección de 'Objetivos, alcance y delimitación', por otra parte, se utiliza el algoritmo NSGA-II sin referenciar o un desarrollo de la idea detrás del uso de éste método al problema y esto es una pieza central en la simulación.
+\paragraph{} El estado del arte es acorde con el artículo pero requiere mejoras, si bien se citan algunos estudios relacionados, no esta claro cómo se relacionan con el desarrollo del artículo, por otra parte la redacción de los párrafos 2 al 4, se centran más en el contexto que en el desarrollo de la simulación, este espacio se podría utilizar para detallar las diferentes herramientas de simulación que se han utilizado y su conveniencia en el contexto del problema.
+\paragraph{}Por esta misma linea se encuentran otros similares:
+\begin{itemize}
+	\item Estado del arte párrafo 3. Nuevamente se retoma el tema del propósito, algo que se hace en las secciones anteriores.
+	\item Estado del arte párrafo 6. subyacentes es un término que mas adelante se describe, vale la pena agregar una nota o cambiar la palabra para que sea mas clara la lectura.
+\end{itemize}
+\paragraph{} El Desarrollo del contenido matemático se explican muy bien cada una de las variables del problema y la forma en la que se está construyendo el objeto matemático que se va a modelar, sin embargo hay errores sobretodo de escritura en algunos lugares:
+\begin{itemize}
+	\item $v_i$ aparece descrita en el párrafo 3 como el costo de la transacción, pero en el párrafo 4 resulta ser el valor de la comisión ¿es un error de escritura?
+	\item Hay errores de notación, $N$ se declara como el connjunto de $n$ acciones que en el siguiente párrafo resulta ser un tipo de acción, pero en la fórmula $2$ se utiliza como uno de los limites de la sumatoria.
+\end{itemize}
+\paragraph{} Otros menores es que no se indica si el costo de la trasacción es por la compra, la venta o ambas y es necesario incluir el enunciado el teorema de la dualidad por lo menos en el marco teórico.
+\paragraph{}El marco teórico tiene elementos que se utilizan y algunos términos que pueden no resultar familiares, este debería estar antes del desarrollo matemático, dado que hay términos aquí que se utilizan del estado del arte en adelante.
+\paragraph{}La explicación del código y su implementación requieren los detalles particulares de la implementación, no es claro cómo se pretende evaluar la calidad de cada individuo de la población, o que parámetros (cómo la probabilidad de mutación, el tamaño de la población) se consideran en el modelo o bajo qué método se pretende hacer el cruce, son detalles relevantes que vale la pena explicar.
+\paragraph{}En los resultados obtenidos, si bien son cortos y concisos, les falta desarrollo, los gráficos por ejemplo no son claros respecto a qué variables corresponden y tampoco se cuenta con una interpretación numérica del comportamiento obtenido con respecto al ideal.
+\paragraph{Juicio de idoneidad.} No es aceptable en la forma presente, requiere cambios sustanciales.
+
+\paragraph{Nota.}Considero que no estoy en pocisión de calificar a mi compañero. 
+
+\end{document}
